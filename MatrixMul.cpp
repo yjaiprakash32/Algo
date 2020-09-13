@@ -11,6 +11,55 @@ void naiveMul(int** a, int** b, int** c,int n){
     }
 }
 
+int** muldc(int** a, int** b , int n){
+    if(n==1)
+    return a[0][0]*b[0][0];
+    int **x = new int*[n/2];
+    int **y = new int*[n/2];
+    int **z = new int*[n/2];
+    int **p = new int*[n/2];
+    int **q = new int*[n/2];
+    int **r = new int*[n/2];
+    int **s = new int*[n/2];
+    int **t = new int*[n/2];
+    for(int i = 0 ;i <n/2;i++){
+        x[i] = new int[n/2];
+        y[i] = new int[n/2];
+        z[i] = new int[n/2];
+        p[i] = new int[n/2];
+        q[i] = new int[n/2];
+        r[i] = new int[n/2];
+        s[i] = new int[n/2];
+        t[i] = new int[n/2];
+    }
+
+    for(int i = 0; i < n/2; i++){
+        for(int j = 0 ;j<n/2;j++){
+            x[i][j]= a[i][j];
+            q[i][j]= b[i][j];
+        }
+    }
+    for(int i = 0; i < n/2; i++){
+        for(int j = 0 ;j<n/2;j++){
+            y[i][j]= a[i][j+n/2];
+            r[i][j]= b[i][j+n/2];
+        }
+    }
+    for(int i = 0; i < n/2; i++){
+        for(int j = 0 ;j<n/2;j++){
+            x[i][j]= a[i][j];
+            q[i][j]= b[i][j];
+        }
+    }
+    for(int i = 0; i < n/2; i++){
+        for(int j = 0 ;j<n/2;j++){
+            x[i][j]= a[i][j];
+            q[i][j]= b[i][j];
+        }
+    }
+
+}
+
 
 
 
