@@ -12,11 +12,14 @@ int knapSackrecur(int w, int wt[],int val[],int n){
 
 int main(){
     int w,n;
+    cout<<"Enter Weight and n"<<endl;
     cin>>w>>n;
     int wt[n];
     int val[n];
+    cout<<"Enter weights"<<endl;
     for(int i =0;i<n;i++)
     cin>>wt[i];
+    cout<<"Enter Values"<<endl;
     for(int i =0;i<n;i++)
     cin>>val[i];
     cout<<knapSackrecur(w,wt,val,n);
