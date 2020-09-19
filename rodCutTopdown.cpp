@@ -27,7 +27,16 @@ int cutRod(int price[], int n){
 
 int main(){
     int len;
-    cin>>len;
+    double x;
+    cout<<"Enter value of len and x ";
+    cin>>len>>x;
+    if(x==0.50)
+    len=len*2;
+    if(x==0.25)
+    len = len*4;
+    if(x==0.20)
+    len= len*5;
+    
     int price[len];
     for(int i=0;i<len;i++)
     cin>>price[i];
