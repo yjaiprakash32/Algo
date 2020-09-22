@@ -1,8 +1,10 @@
 #include<iostream>
 #include<cmath>
+#include<chrono>
+using namespace std::chrono;
 using namespace std;
 
-void naiveMul(int** a, int** b, int** c,int n){
+void naiveMul( int** a,int** b, int** c,int n){
     for(int i = 0;i<n;i++){
         for(int j = 0;j<n;j++){
             c[i][j]=0;
@@ -186,41 +188,65 @@ int main(){
         outDc[i] = new int[n];
         outStra[i] = new int[n];
     }
-    cout<<"enter elements of a ";
-    for(int i = 0;i<n;i++){
-        for(int j=0;j<n;j++){
-            cin>>a[i][j];
+    // cout<<"enter elements of a ";
+    // for(int i = 0;i<n;i++){
+    //     for(int j=0;j<n;j++){
+    //         cin>>a[i][j];
+    //     }
+    // }
+    // cout<<"Enter elements of b ";
+    // for(int i = 0;i<n;i++){
+    //     for(int j=0;j<n;j++){
+    //         cin>>b[i][j];
+    //     }
+    // }
+
+    for(int i =0;i<n;i++){
+        for(int j =0;j<n;j++){
+            a[i][j]=rand()%10+1;
+            b[i][j]=rand()%10+1;
         }
     }
-    cout<<"Enter elements of b ";
-    for(int i = 0;i<n;i++){
-        for(int j=0;j<n;j++){
-            cin>>b[i][j];
-        }
-    }
+    auto strt1 = high_resolution_clock::now();
+    ios_base::sync_with_stdio(false);
     naiveMul(a,b,outNaive,n);
-    cout<<"Using Naive: "<<endl;
-    for(int i = 0;i<n;i++){
-        for(int j=0;j<n;j++){
-            cout<<outNaive[i][j]<<" ";
-        }
-        cout<<endl;
-    }
+    auto end1 =high_resolution_clock::now();
+    auto time1=duration_cast<microseconds>(end1-strt1);
+    
+    cout<<time1.count()<<endl;
+    // cout<<"Using Naive: "<<endl;
+    // for(int i = 0;i<n;i++){
+    //     for(int j=0;j<n;j++){
+    //         cout<<outNaive[i][j]<<" ";
+    //     }
+    //     cout<<endl;
+    // }
+    auto strt2 = high_resolution_clock::now();
+    ios_base::sync_with_stdio(false);
     outDc =muldc(a,b,n);
-    cout<<"Using Divide and conquer: "<<endl;
-    for(int i = 0;i<n;i++){
-        for(int j=0;j<n;j++){
-            cout<<outDc[i][j]<<" ";
-        }
-        cout<<endl;
-    }
+    auto end2 =high_resolution_clock::now();
+    auto time2=duration_cast<microseconds>(end2-strt2);
+    
+    cout<<time2.count()<<endl;
+    // cout<<"Using Divide and conquer: "<<endl;
+    // for(int i = 0;i<n;i++){
+    //     for(int j=0;j<n;j++){
+    //         cout<<outDc[i][j]<<" ";
+    //     }
+    //     cout<<endl;
+    // }
+    auto strt3 = high_resolution_clock::now();
+    ios_base::sync_with_stdio(false);
     outStra =strassen(a,b,n);
-    cout<<"Using Strassen "<<endl;
-    for(int i = 0;i<n;i++){
-        for(int j=0;j<n;j++){
-            cout<<outStra[i][j]<<" ";
-        }
-        cout<<endl;
-    }
+    auto end3 =high_resolution_clock::now();
+    auto time3=duration_cast<microseconds>(end3-strt3);
+    cout<<time3.count()<<endl;
+    // cout<<"Using Strassen "<<endl;
+    // for(int i = 0;i<n;i++){
+    //     for(int j=0;j<n;j++){
+    //         cout<<outStra[i][j]<<" ";
+    //     }
+    //     cout<<endl;
+    // }
     
 }
