@@ -6,15 +6,15 @@ using namespace std;
 long long karatsuba(long long x , long long y){
   if(x<10||y<10)
   return x*y;
-  int len = max(to_string(x).length(),to_string(y).length());
-  int m = ceil(len/2);
-  long long xh=floor(x/pow(10,m));
-  long long xl=x%int(pow(10,m));
-  long long yh=floor(y/pow(10,m));
-  long long yl=y%int(pow(10,m));
-  long long p1 = karatsuba(xh,yh);
-  long long p2 = karatsuba(xl,yl);
-  long long pr =karatsuba(xh+xl,yh+yl)-p1-p2;
+  int len = min(log10(x)+1,log10(y)+1);
+  int m = floor(len/2);
+  long long xl=floor(x/pow(10,m));
+  long long xr=x%(int)(pow(10,m));
+  long long yl=floor(y/pow(10,m));
+  long long yr=y%(int)(pow(10,m));
+  long long p1 = karatsuba(xl,yl);
+  long long p2 = karatsuba(xr,yr);
+  long long pr =karatsuba(xl+xr,yl+yr)-p1-p2;
   return int(p1*(pow(10,len))+(pr)*(pow(10,m))+p2);
 
 }
