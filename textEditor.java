@@ -74,8 +74,6 @@ public class textEditor {
                     System.out.println("Enter To: ");
                     int copyTo = sc.nextInt();
                     sc.nextLine();
-                    redo.push("COPY");
-                    COPY:
                     if(copyFrom<0 || copyTo>str.length()){
                         System.out.println("REPEAT COMMAND AND ENTER CORRECT VALUES ");
                     }

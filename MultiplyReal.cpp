@@ -21,7 +21,8 @@ cout<<"Enter two numbers : ";
         }
 
     char sign = '+';
-    if((num1[0]=='-' || num2[0]=='-')&&(num1[0]!='-' || num2[0]!='-')) sign = '-';
+    if((num1[0]=='-' || num2[0]=='-')&&(num1[0]!='-' || num2[0]!='-')) 
+    sign = '-';
     
     if(num1[0]=='-' && num2[0]=='-'){
     num1=num1.substr(1);

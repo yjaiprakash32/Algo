@@ -17,7 +17,8 @@ int main(){
     string nump2 = num2.substr(0);
     
     if(len1==0||len2==0) {
-        cout<<"ERROR"<<endl;return 0;
+        cout<<"ERROR"<<endl;
+        return 0;
     }
     char sign = '+';
     if((num1[0]=='-' || num2[0]=='-')&&(num1[0]!='-' || num2[0]!='-')) sign = '-';
