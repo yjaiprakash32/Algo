@@ -60,7 +60,12 @@ int main() {
         cin >> a;
         v2.push_back(a);
     }
-    vector<int> v3 = solve(v1, v2, n);
+    if(n%2!=0){
+        v1.push_back(0);
+        v2.push_back(0);
+    }
+    vector<int> v3 = solve(v1, v2, v1.size());
+    cout<<"Ceofficients are (Highest Power First): "<<endl;
     for (int i = 0; i < 2*n-1; i++)
         cout << v3[i] << " ";
 }
