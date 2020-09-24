@@ -15,7 +15,7 @@ long long karatsuba(long long x , long long y){
   long long p1 = karatsuba(xl,yl);
   long long p2 = karatsuba(xr,yr);
   long long pr =karatsuba(xl+xr,yl+yr)-p1-p2;
-  return int(p1*(pow(10,len))+(pr)*(pow(10,m))+p2);
+  return (long long)(p1*(pow(10,len))+(pr)*(pow(10,m))+p2);
 
 }
 
