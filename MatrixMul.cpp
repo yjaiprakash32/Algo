@@ -127,7 +127,7 @@ int** strassen(int **a,int **b, int n){
     }
 
     for(int i =0;i<n/2;i++){
-        for(int j=0;j<n/2;++j){
+        for(int j=0;j<n/2;j++){
             x[i][j]= a[i][j];
             y[i][j]= a[i][j+n/2];
             z[i][j]= a[i+n/2][j];
@@ -139,26 +139,26 @@ int** strassen(int **a,int **b, int n){
         }
     } 
         int **p1=strassen(matrixAdd(x,p,n/2),matrixAdd(q,t,n/2),n/2);
-        int **p2=strassen(matrixAdd(z,t,n/2),q,n/2);
+        int **p2=strassen(matrixAdd(z,p,n/2),q,n/2);
         int **p3=strassen(x,matrixSub(r,t,n/2),n/2);
-        int **p4=strassen(p,matrixSub(r,p,n/2),n/2);
+        int **p4=strassen(p,matrixSub(s,q,n/2),n/2);
         int **p5=strassen(matrixAdd(x,y,n/2),t,n/2);
-        int **p6=strassen(matrixSub(z,x,n/2),matrixAdd(p,q,n/2),n/2);
-        int **p7=strassen(matrixAdd(y,p,n/2),matrixAdd(s,t,n/2),n/2);
+        int **p6=strassen(matrixSub(z,x,n/2),matrixAdd(q,r,n/2),n/2);
+        int **p7=strassen(matrixSub(y,p,n/2),matrixAdd(s,t,n/2),n/2);
 
         int **c11=matrixAdd(matrixSub(matrixAdd(p1,p4,n/2),p5,n/2),p7,n/2);
         int **c12=matrixAdd(p3,p5,n/2);
         int **c21=matrixAdd(p2,p4,n/2);
         int **c22=matrixAdd(matrixSub(matrixAdd(p1,p3,n/2),p2,n/2),p6,n/2);
 
-        for (int i = 0; i < n/2; ++i)
+        for (int i = 0; i < n/2; i++)
         {
-        	for (int j = 0; j < n/2; ++j)
+        	for (int j = 0; j < n/2; j++)
         	{
         		C[i][j]=c11[i][j];
         		C[i][j+n/2]=c12[i][j];
         		C[i+n/2][j]=c21[i][j];
-        		C[i+n/2][j+n/2]=c22[j][j];	
+        		C[i+n/2][j+n/2]=c22[i][j];	
         	}
         	
         } 
