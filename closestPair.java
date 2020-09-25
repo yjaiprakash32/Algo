@@ -1,5 +1,3 @@
-package com.company;
-
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Scanner;
@@ -26,7 +24,9 @@ public class closestPair {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of pairs of points: ");
         int n = sc.nextInt();
+        System.out.println("Enter the points in seperated by space (like x y): ");
         Point[] pts = new Point[n];
         for(int i = 0;i<n;i++){
             pts[i]= new Point();
