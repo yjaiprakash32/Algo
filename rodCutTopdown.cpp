@@ -38,6 +38,7 @@ int main(){
     len= len*5;
     
     int price[len];
+    cout<<"Enter the prices: ";
     for(int i=0;i<len;i++)
     cin>>price[i];
     cout<<cutRod(price,len);
