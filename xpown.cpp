@@ -13,7 +13,7 @@ long long power(long long x, int n){
 }
 
 int main(){
-    cout<<"Enter x and y: "
+    cout<<"Enter x and y: ";
     long long x;
     int y;
     cin>>x>>y;
