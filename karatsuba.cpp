@@ -20,6 +20,7 @@ long long karatsuba(long long x , long long y){
 }
 
 int main(){
+    cout<<"Enter two numbers: ";
     long long x,y;
     cin>>x>>y;
     cout<<karatsuba(x,y)<<endl;

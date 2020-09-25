@@ -4,7 +4,7 @@ using namespace std;
 
 int main(){
      string num1, num2;
-    cout<<"Enter two real numbers: \n";
+    cout<<"Enter two real numbers: ";
     cin>>num1>>num2;
 
     string ip1,ip2,dp1,dp2;

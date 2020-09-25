@@ -48,13 +48,13 @@ int main() {
     int n;
     cin >> n;
     vector<int> v1, v2;
-    cout << "enter coefficient of first polynomial(0 in case of no value for that power) ";
+    cout << "enter coefficient of first polynomial(0 in case of no value for that power)(In decreasing order of power) ";
     for (int i = 0; i < n; i++) {
         int a;
         cin >> a;
         v1.push_back(a);
     }
-    cout << "enter coefficient of second polynomial(0 in case of no value for that power) ";
+    cout << "enter coefficient of second polynomial(0 in case of no value for that power)(in decreasing order of power) ";
     for (int i = 0; i < n; i++) {
         int a;
         cin >> a;

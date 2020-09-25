@@ -13,9 +13,10 @@ long long power(long long x, int n){
 }
 
 int main(){
-    float x;
-    unsigned int y;
+    cout<<"Enter x and y: "
+    long long x;
+    int y;
     cin>>x>>y;
-    float ans = power(x,y);
+    long long ans = power(x,y);
     cout<<ans;
 }

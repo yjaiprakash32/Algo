@@ -31,8 +31,10 @@ int maxSum(int arr[],int left, int right){
 
 int main(){
     int len;
+    cout<<"Enter length of Array: ";
     cin>>len;
     int arr[len];
+    cout<<"Enter the values: ";
     for(int i =0;i<len;i++)
     cin>>arr[i];
 
