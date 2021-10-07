@@ -1,0 +1,51 @@
+void merge(int arr[], int l, int m, int r)
+    {
+        int i, j, sizeLeft, sizeRight, k;
+        sizeLeft=m-l+1;
+        sizeRight=r-m;
+        int a1[sizeLeft], a2[sizeRight];
+         
+        for(i=0; i<sizeLeft; ++i)
+            a1[i]=arr[l+i];
+        for(j=0; j<sizeRight; ++j)
+            a2[j]=arr[m+j+1];
+            
+        i=0, j=0, k=l;
+        while(i<sizeLeft && j<sizeRight)
+        {
+            if(a1[i]<=a2[j])
+            {
+                arr[k]=a1[i];
+                i++;
+            }
+            else
+            {
+                arr[k]=a2[j];
+                j++;
+            }
+            k++;
+        }
+        while(i<sizeLeft)
+        {
+            arr[k]=a1[i];
+            i++;
+            k++;
+        }
+        while(j<sizeRight)
+        {
+            arr[k]=a2[j];
+            j++;
+            k++;
+        }
+    }
+    
+    void mergeSort(int arr[], int l, int r)
+    {
+        if(l < r) 
+        {
+            int mid=l+(r-l)/2;
+            mergeSort(arr, l, mid);
+            mergeSort(arr, mid+1, r);
+            merge(arr, l, mid, r);
+        }
+    }
